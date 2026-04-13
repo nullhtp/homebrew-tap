@@ -1,14 +1,18 @@
 class Sshkeeper < Formula
   desc "A cross-platform TUI for managing SSH connections"
   homepage "https://github.com/nullhtp/sshkeeper"
-  url "https://github.com/nullhtp/sshkeeper/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "7bcde49ac0cb88e4384d9d9a91e76c06f510dc4d9ad228478a4f4e82bf21ae3f"
+  version "0.1.0"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.0/sshkeeper-0.1.0-aarch64-apple-darwin.tar.gz"
+      sha256 "b64e5eae0863ab4a7e9597a87a4280a167ba47b8b6a770d453269366340306a3"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "sshkeeper"
   end
 
   test do
