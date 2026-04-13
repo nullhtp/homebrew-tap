@@ -1,22 +1,22 @@
 class Sshkeeper < Formula
   desc "A cross-platform TUI for managing SSH connections"
   homepage "https://github.com/nullhtp/sshkeeper"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.4/sshkeeper-aarch64-apple-darwin.tar.gz"
-      sha256 "c62b53e46da6d86367db5fe66bb07210064ada6eda71c8adf46e1b2c9b94b6df"
+      url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.5/sshkeeper-aarch64-apple-darwin.tar.gz"
+      sha256 "0d9999d6a3d7357f5ad135d7a9d6636d6bc72783ef0f01a5790bea29cad42d5e"
     elsif Hardware::CPU.intel?
-      url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.4/sshkeeper-x86_64-apple-darwin.tar.gz"
-      sha256 "57a466607f3725ada135100219c5eaa755ef73e0c66dc2adc9d3faeb6d968546"
+      url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.5/sshkeeper-x86_64-apple-darwin.tar.gz"
+      sha256 "8674e879236e865bc117a44901a784988cd6534af632b76fa0cc6145d0dbb539"
     end
   end
 
   on_linux do
-    url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.4/sshkeeper-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "50cd11d9d98cf50c7d47710014e181451de3eaee92d091458f5e0bec09a696bb"
+    url "https://github.com/nullhtp/sshkeeper/releases/download/v0.1.5/sshkeeper-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "5b56cb40e8a7703a6c6646d7346ae0cd140f5dd740eb99e8a070adcd0ef737d0"
   end
 
   def install
