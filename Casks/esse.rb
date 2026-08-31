@@ -1,8 +1,8 @@
 # Generated from resources/cask.rb.in in nullhtp/esse by scripts/release.sh.
 # Edit it there: the copy in the tap is a copy (brew-install design.md, D4).
 cask "esse" do
-  version "0.1.0"
-  sha256 "bbb00538af6cfe7b8c8985217743db56f722c4a189e1276625b177f914bef158"
+  version "0.2.0"
+  sha256 "fee5713dcd4d7333932b7e7ebef90d9c9275e277d2e339fa2d4d6bf4c28babda"
 
   url "https://github.com/nullhtp/esse/releases/download/v#{version}/Esse-#{version}-arm64.zip"
   name "esse"
@@ -26,24 +26,22 @@ cask "esse" do
   uninstall quit:      "com.nullhtp.esse",
             launchctl: "com.nullhtp.esse"
 
-  # Never the writing: that lives in ~/Documents/Esse and is nobody's to bin.
-  zap trash: "~/Library/LaunchAgents/com.nullhtp.esse.plist"
+  # Never the writing: that lives in a folder of the writer's choosing and is
+  # nobody's to bin.
+  zap trash: [
+    "~/Library/LaunchAgents/com.nullhtp.esse.plist",
+    "~/Library/Preferences/com.nullhtp.esse.conf",
+  ]
 
   caveats <<~EOS
-    esse is a background app: no Dock icon, no menu bar. Open it once, then
-    reach it from anywhere with ctrl-alt-e — press it again to put it away.
-    cmd-q quits.
+    One line finishes the install — where your essays live, whether esse waits
+    at login, and which key brings it forward:
 
-    To have it waiting for that key from login:
-      /Applications/Esse.app/Contents/Resources/login-item
-    and to stop:
-      /Applications/Esse.app/Contents/Resources/login-item --off
+      /Applications/Esse.app/Contents/Resources/esse-setup
 
-    Another combination, if ctrl-alt-e is taken on your machine:
-      HOTKEY=cmd-shift-space /Applications/Esse.app/Contents/Resources/login-item
-
-    Your writing lives in ~/Documents/Esse as plain files, and nothing here —
-    install, upgrade or uninstall — touches it.
+    Run it again any time to change an answer. Your writing is plain files in
+    a folder you choose, and nothing here — install, upgrade or uninstall —
+    touches it.
 
     This build is signed by its author, not notarised by Apple: paying a
     yearly developer subscription for an app with one writer is not the trade
