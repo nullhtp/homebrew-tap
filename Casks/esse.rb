@@ -4,8 +4,7 @@ cask "esse" do
   version "0.1.0"
   sha256 "bbb00538af6cfe7b8c8985217743db56f722c4a189e1276625b177f914bef158"
 
-  url "https://github.com/nullhtp/esse/releases/download/v#{version}/Esse-#{version}-arm64.zip",
-      verified: "github.com/nullhtp/esse/"
+  url "https://github.com/nullhtp/esse/releases/download/v#{version}/Esse-#{version}-arm64.zip"
   name "esse"
   desc "Conveyor from a spark to a published essay"
   homepage "https://github.com/nullhtp/esse"
