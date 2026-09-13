@@ -1,8 +1,8 @@
 # Generated from resources/cask.rb.in in nullhtp/esse by scripts/release.sh.
 # Edit it there: the copy in the tap is a copy (brew-install design.md, D4).
 cask "esse" do
-  version "0.3.0"
-  sha256 "9cec8b27e9c6680df8713c9094e41d14be37fbd1397c063a7076f8a381b1e79e"
+  version "0.4.0"
+  sha256 "776b8b9eac2ee5a741192877ecb03e56ddd0e09913318e6320107f71f9d09a06"
 
   url "https://github.com/nullhtp/esse/releases/download/v#{version}/Esse-#{version}-arm64.zip"
   name "esse"
